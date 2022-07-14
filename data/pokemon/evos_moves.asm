@@ -1745,16 +1745,18 @@ StarmieEvosMoves:
 
 BulbasaurEvosMoves:
 ; Evolutions
-	db EV_LEVEL, 16, IVYSAUR
 	db 0
 ; Learnset
-	db 7, LEECH_SEED
-	db 13, VINE_WHIP
-	db 20, POISONPOWDER
-	db 27, RAZOR_LEAF
-	db 34, GROWTH
-	db 41, SLEEP_POWDER
-	db 48, SOLARBEAM
+    db 6,  ACID
+	db 9,  AMNESIA
+    db 12, HARDEN
+    db 15, SCREECH
+	db 18, SLUDGE
+    DB 21, ACID_ARMOR
+	db 24, TAKE_DOWN
+	db 27, SCREECH
+    db 30, TOXIC
+    db 33, EXPLOSION
 	db 0
 
 VenusaurEvosMoves:

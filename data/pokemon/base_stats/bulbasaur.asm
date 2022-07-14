@@ -1,22 +1,21 @@
 	db DEX_BULBASAUR ; pokedex id
 
-	db  45,  49,  49,  45,  65
+	db  50,  50,  62,  65,  40
 	;   hp  atk  def  spd  spc
 
-	db GRASS, POISON ; type
-	db 45 ; catch rate
-	db 64 ; base exp
+	db POISON, POISON ; type
+	db 190 ; catch rate
+	db 65 ; base exp
 
 	INCBIN "gfx/pokemon/front/bulbasaur.pic", 0, 1 ; sprite dimensions
 	dw BulbasaurPicFront, BulbasaurPicBack
 
-	db TACKLE, GROWL, NO_MOVE, NO_MOVE ; level 1 learnset
+	db POUND, POISON_GAS, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MEGA_DRAIN,   SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         REST,         SUBSTITUTE,   CUT
+	tmhm REST,         SELFDESTRUCT, BODY_SLAM,     SUBSTITUTE,   MEGA_DRAIN,   \
+	     TOXIC,        EXPLOSION
 	; end
 
 	db 0 ; padding

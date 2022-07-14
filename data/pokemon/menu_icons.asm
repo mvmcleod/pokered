@@ -1,6 +1,6 @@
 MonPartyData:
 	nybble_array MonPartyData
-	nybble ICON_GRASS     ; Bulbasaur
+	nybble ICON_MON       ; Bulbasaur
 	nybble ICON_GRASS     ; Ivysaur
 	nybble ICON_GRASS     ; Venusaur
 	nybble ICON_MON       ; Charmander

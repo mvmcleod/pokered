@@ -152,7 +152,7 @@ MonsterNames::
 	db "PIDGEOTTO@"
 	db "PIDGEOT@@@"
 	db "STARMIE@@@"
-	db "BULBASAUR@"
+    db "TRUBBISH@@"
 	db "VENUSAUR@@"
 	db "TENTACRUEL"
 	db "MISSINGNO."

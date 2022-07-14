@@ -896,6 +896,8 @@ OaksLabMonChoiceMenu:
 	and a
 	jr nz, OaksLabMonChoiceEnd
 	ld a, [wcf91]
+	cp STARTER3
+	jp nz, OaksLabMonWrongChoice
 	ld [wPlayerStarter], a
 	ld [wd11e], a
 	call GetMonName
@@ -935,9 +937,19 @@ OaksLabMonChoiceMenu:
 	ld [wOaksLabCurScript], a
 OaksLabMonChoiceEnd:
 	jp TextScriptEnd
+OaksLabMonWrongChoice:
+	ld a, $1
+    ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	ld hl, OaksLabMonNotText
+	call PrintText
+	jp TextScriptEnd
 
 OaksLabMonEnergeticText:
 	text_far _OaksLabMonEnergeticText
+	text_end
+
+OaksLabMonNotText:
+	text_far _OaksLabMonNotText
 	text_end
 
 OaksLabReceivedMonText:
@@ -954,10 +966,32 @@ OaksLabScript_1d22d:
 	ld [hl], SPRITE_FACING_DOWN
 	ld hl, OaksLabLastMonText
 	call PrintText
+	ld a, $1
+	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
+	call YesNoChoice ; yes/no menu
+	ld a, [wCurrentMenuItem]
+	and a
+	jp nz, TextScriptEnd
+	ld a, HS_STARTER_BALL_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld hl, OaksLabReceivedSquirtleText
+	call PrintText
+    xor a ; PLAYER_PARTY_DATA
+	ld [wMonDataLocation], a
+	ld a, 5
+	ld [wCurEnemyLVL], a
+	ld a, STARTER2
+	ld [wd11e], a
+	call AddPartyMon
 	jp TextScriptEnd
 
 OaksLabLastMonText:
 	text_far _OaksLabLastMonText
+	text_end
+
+OaksLabReceivedSquirtleText:
+	text_far _OaksLabReceivedSquirtleText
 	text_end
 
 OaksLabText32:

@@ -1249,13 +1249,13 @@ _StarmieDexEntry::
 	dex
 
 _BulbasaurDexEntry::
-	text "A strange seed was"
-	next "planted on its"
-	next "back at birth."
+	text "Inhaling the gas"
+	next "they belch will"
+	next "make you sleep"
 
-	page "The plant sprouts"
-	next "and grows with"
-	next "this #MON"
+	page "for a week. They"
+	next "prefer unsanitary"
+	next "places"
 	dex
 
 _VenusaurDexEntry::
